@@ -711,3 +711,65 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 .timeline-item small { /* La balise <small> sert à écrire un petit texte secondaire. */
 
     color: var(--gray); /* Texte gris, pour une information moins importante. */}
+.statement { /* La section Citation (class="statement"). */
+
+    background: var(--red); /* Fond rouge (variable --red). */
+
+    color: var(--white); /* Texte blanc cassé. Les éléments à l'intérieur héritent de cette couleur. */
+
+    padding: 150px 8%; /* Espace intérieur : 150px en haut et en bas, 8% à gauche et à droite. */
+
+}
+
+
+.statement-content { /* Le bloc qui contient la citation. */
+
+    max-width: 1100px; /* Largeur maximale : le bloc ne dépasse pas 1100 pixels. */
+
+    margin: auto; /* Avec auto, le navigateur répartit l'espace restant à gauche et à droite de façon égale : le bloc est centré horizontalement. Cela ne fonctionne que si l'élément a une largeur limitée (ici, max-width). */
+
+    text-align: center; /* Centre le texte à l'intérieur du bloc. Ce n'est pas la même chose que centrer le bloc lui-même (c'est le rôle de margin: auto). */
+
+}
+
+
+.statement-content > span { /* Les <span> placés directement dans .statement-content (> = enfant direct). */
+
+    font-size: 11px; /* Très petit texte. */
+
+    letter-spacing: 3px; /* Espace fortement les lettres pour un style aéré. */
+
+}
+
+
+.statement blockquote { /* La balise <blockquote> est la balise HTML des citations. */
+
+    font-family:
+        Georgia, /* Police à empattements, élégante pour une citation. */
+        serif; /* Solution de secours : n'importe quelle police à empattements. */
+
+    font-size:
+        clamp( /* Taille adaptative qui suit la largeur de l'écran, entre deux limites. */
+            40px, /* Minimum : jamais moins de 40 pixels. */
+            6vw, /* Idéal : 6 % de la largeur de la fenêtre (vw = « viewport width »). */
+            80px /* Maximum : jamais plus de 80 pixels. */
+        );
+
+    line-height: 1; /* Interligne égal à la taille de la police : des lignes serrées, sans nombre d'unité. */
+
+    font-style: italic; /* Affiche la citation en italique. */
+
+    margin: 50px 0; /* Marge extérieure : 50px en haut et en bas, 0 à gauche et à droite. La citation est bien séparée des éléments autour. */
+
+}
+
+
+.statement p { /* Les paragraphes situés dans .statement (ici, probablement l'auteur de la citation). */
+
+    font-size: 13px; /* Petit texte. */
+
+    text-transform: uppercase; /* Affiche le texte en majuscules. */
+
+    letter-spacing: 2px; /* Espace légèrement les lettres. */
+
+}
